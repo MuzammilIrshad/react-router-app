@@ -3,11 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './project/Home';
+import './project/home.css';
+import GlobalProvider from './project/Reducer';
+import {
+    BrowserRouter as Router,
+    Route,
+    Switch,
+} from "react-router-dom";
+import Product from './project/Product';
+import Cart from './project/Cart';
+import Navbar from './project/Navbar';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <>
+      <GlobalProvider>
+            <Router>
+                <Navbar />
+                <Switch>
+               <Route exact path="/">
+                    <Home />
+               </Route>
+                <Route path="/Product">
+                     <Product />
+                </Route>
+                <Route path="/Cart">
+                    <Cart />
+                    </Route>
+                </Switch>
+        </Router>
+      </GlobalProvider>
+    </>,
   document.getElementById('root')
 );
 
