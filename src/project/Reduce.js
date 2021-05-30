@@ -13,7 +13,7 @@ const Reducer = (state, action) => {
     else if (action.type === 'DEL_CART') {
         console.log(action.payload);
         //console.log(state);
-        const items = state.shoes.filter(item => item['img'] != action.payload['img']);
+        const items = state.shoes.filter(item => item['img'] !== action.payload['img']);
         console.log(items);
         return {
             ...state,

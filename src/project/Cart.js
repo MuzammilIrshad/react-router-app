@@ -5,7 +5,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { GlobalContext } from './Reducer';
-//import Navbar from './Navbar';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import './home.css';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,10 +36,16 @@ const useStyles = makeStyles((theme) => ({
 export default function Cart() {
     const classes = useStyles();
     const { state, delShoe } = useContext(GlobalContext);
-    //const values = newState;
+    const mySwal = withReactContent(Swal);
     console.log(state);
     const purchase = (shoe) => {
-        alert('Item Purchased');
+        mySwal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Shoe Purchased',
+            showConfirmButton: false,
+            timer: 1500
+        })
         delShoe(shoe);
     }
 
@@ -49,7 +56,7 @@ export default function Cart() {
 
             <Grid item xs={12} sm={4}>
                 <Paper className={classes.paper} key={id}>
-                    <img src={shoe['img']} className={classes.img} />
+                    <img src={shoe['img']} className={classes.img} alt="cartShoes" />
                     <h3>$ {shoe['price']}</h3>
                     <Button variant="contained" color="primary" className={classes.root[1]} id='btn1' onClick={()=> purchase(shoe)} >
                         PURCHASE

@@ -4,8 +4,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { Link } from 'react-router-dom';
 import './home.css';
@@ -36,7 +34,7 @@ export default function Navbar() {
         <div className={classes.root}>
             <AppBar position="static" className={classes.bar}>
                 <Toolbar>
-                    <img src='https://cdn160.picsart.com/upscale-273617642016211.png?r1024x1024' className={classes.image} />
+                    <img src='https://cdn160.picsart.com/upscale-273617642016211.png?r1024x1024' className={classes.image}alt="shoe" />
              <Typography variant="h6" className={classes.title}>
                         Nike Shoes Store 
               </Typography>

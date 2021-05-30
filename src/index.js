@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './project/Home';
 import './project/home.css';
@@ -27,9 +26,10 @@ ReactDOM.render(
                 <Route path="/Product">
                      <Product />
                 </Route>
-                <Route path="/Cart">
+                  <Route path="/Cart">
                     <Cart />
                     </Route>
+              
                 </Switch>
         </Router>
       </GlobalProvider>
